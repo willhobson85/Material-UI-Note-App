@@ -2,6 +2,8 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button';
 import { Container } from '@mui/system/';
+import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 
 // import ButtonGroup from '@mui/material/ButtonGroup';
@@ -28,6 +30,7 @@ export default function Create() {
       type='submit'
       color='secondary'
       variant='contained'
+      endIcon={<KeyboardArrowRightIcon />}
     >
       Submit
     </Button>
@@ -54,6 +57,16 @@ export default function Create() {
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup> */}
+
+      {/* icons */}
+      {/* <br />
+      <AcUnitOutlinedIcon />
+      // To create an icon, you must install icon package and import them. They can also take props
+      // Can add icons to a button at start by using startIcon={<component />} or at the end with endIcon={<component />}
+      <AcUnitOutlinedIcon 
+        color='secondary'
+        fontSize='large'
+      /> */}
     </Container>
   )
 }
