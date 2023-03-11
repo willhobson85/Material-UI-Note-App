@@ -4,15 +4,35 @@ import Button from '@mui/material/Button';
 import { Container } from '@mui/system/';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-
+// import { ThemeProvider, createMuiTheme, makeStyles } from '@mui/styles';
 
 // import ButtonGroup from '@mui/material/ButtonGroup';
 // This lets you have multiple buttons displayed together
 
+// const useStyles = makeStyles({
+//   // This is similar to a react hook
+//   // This is also no longer working. Now we use sx={{}} in the components
+//   // Each property inside this will be a CSS class
+//   btn: {
+//     fontSize: 60,
+//     backgroundColor: 'green',
+//     // This is how we add an effect, such as hover
+//     '&:hover': {
+//       backgroundColor: 'blue'
+//     }
+//   }
+// })
+
 export default function Create() {
+  // To use the styles above, we invoke the hook inside the function by assigning a constant to the hook
+  
+  // const classes = useStyles()
+  
+  
   return (
     <Container>
      <Typography
+      sx={{textDecoration: 'underline', marginBottom: 5}}
       variant='h6'
       // This will set the style as an h6
       color='textSecondary'
@@ -26,6 +46,8 @@ export default function Create() {
      </Typography>
 
     <Button
+      // className={classes.btn}
+      sx={{backgroundColor: 'green', '&:hover': {backgroundColor: 'blue'}}}
       onClick={() => console.log('You clicked me')}
       type='submit'
       color='secondary'
