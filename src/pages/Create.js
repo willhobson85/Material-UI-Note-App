@@ -6,6 +6,7 @@ import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // import { ThemeProvider, createMuiTheme, makeStyles } from '@mui/styles';
 import { TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+import { useHistory } from 'react-router-dom'
 
 
 // import ButtonGroup from '@mui/material/ButtonGroup';
@@ -30,6 +31,7 @@ export default function Create() {
   
   // const classes = useStyles()
   const [title, setTitle] = useState('')
+  const history = useHistory()
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
@@ -49,9 +51,11 @@ export default function Create() {
     }
 
     if (title && details) {
-      console.log('Title: ', title)
-      console.log('Details: ', details)
-      console.log('Category: ', category)
+      fetch('http://localhost:8000/notes', {
+        method: 'POST',
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({ title, details, category })
+      }).then(() => history.push('/'))
     }
   }
   
