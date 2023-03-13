@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button';
 import { Container } from '@mui/system/';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // import { ThemeProvider, createMuiTheme, makeStyles } from '@mui/styles';
+import { TextField } from '@mui/material';
 
 // import ButtonGroup from '@mui/material/ButtonGroup';
 // This lets you have multiple buttons displayed together
@@ -27,6 +28,29 @@ export default function Create() {
   // To use the styles above, we invoke the hook inside the function by assigning a constant to the hook
   
   // const classes = useStyles()
+  const [title, setTitle] = useState('')
+  const [details, setDetails] = useState('')
+  const [titleError, setTitleError] = useState(false)
+  const [detailsError, setDetailsError] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setTitleError(false)
+    setDetailsError(false)
+
+    if (title === '') {
+      setTitleError(true)
+    }
+
+    if (title === '') {
+      setDetailsError(true)
+    }
+
+    if (title && details) {
+      console.log('title', title)
+      console.log('details', details)
+    }
+  }
   
   
   return (
@@ -45,17 +69,50 @@ export default function Create() {
        Create a new note
      </Typography>
 
-    <Button
-      // className={classes.btn}
-      sx={{backgroundColor: 'green', '&:hover': {backgroundColor: 'blue'}}}
-      onClick={() => console.log('You clicked me')}
-      type='submit'
-      color='secondary'
-      variant='contained'
-      endIcon={<KeyboardArrowRightIcon />}
-    >
-      Submit
-    </Button>
+    <form noValidate autoComplete='off' onSubmit={handleSubmit}>
+      <TextField 
+        onChange={(e) => setTitle(e.target.value)}
+        sx={{
+          marginTop: 5,
+          marginBottom: 5,
+          display: 'block'
+        }}
+        label="Note Title"
+        variant='outlined'
+        color='secondary'
+        fullWidth
+        required
+        error={titleError}
+      />  
+      <TextField 
+        onChange={(e) => setDetails(e.target.value)}
+        sx={{
+          marginTop: 5,
+          marginBottom: 5,
+          display: 'block'
+        }}
+        label="Details"
+        variant='outlined'
+        color='secondary'
+        multiline
+        rows={4}
+        fullWidth
+        required
+        error={detailsError}
+      />  
+      
+
+      <Button
+        // className={classes.btn}
+        sx={{backgroundColor: 'green', '&:hover': {backgroundColor: 'blue'}}}
+        type='submit'
+        color='secondary'
+        variant='contained'
+        endIcon={<KeyboardArrowRightIcon />}
+        >
+        Submit
+      </Button>
+    </form>
 
      {/* <Button 
       type='submit'
