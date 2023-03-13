@@ -8,7 +8,7 @@ import { purple } from '@mui/material/colors';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#fefefe'
+      main: '#3f51b5'
     },
     // The below line will import the purple object from materialUI. This is why we don't have to specify a color like the primary color above. The color objects have a variety of shades built in.
     secondary: purple

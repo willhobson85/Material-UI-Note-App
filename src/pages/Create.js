@@ -5,7 +5,8 @@ import { Container } from '@mui/system/';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // import { ThemeProvider, createMuiTheme, makeStyles } from '@mui/styles';
-import { TextField } from '@mui/material';
+import { TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+
 
 // import ButtonGroup from '@mui/material/ButtonGroup';
 // This lets you have multiple buttons displayed together
@@ -32,6 +33,7 @@ export default function Create() {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
+  const [category, setCategory] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -47,8 +49,9 @@ export default function Create() {
     }
 
     if (title && details) {
-      console.log('title', title)
-      console.log('details', details)
+      console.log('Title: ', title)
+      console.log('Details: ', details)
+      console.log('Category: ', category)
     }
   }
   
@@ -101,6 +104,53 @@ export default function Create() {
         error={detailsError}
       />  
       
+      <FormControl
+        sx={{
+          marginTop: 5,
+          marginBottom: 1,
+          display: 'block'
+        }}
+      >
+        <FormLabel>Note Category</FormLabel>
+        <RadioGroup 
+          row
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <FormControlLabel 
+            value='money'
+            control={<Radio />} 
+            label='Money' 
+            color='secondary'
+          />
+          <FormControlLabel 
+            value='todos'
+            control={<Radio />} 
+            label='Todos' 
+            color='secondary'
+          />
+          <FormControlLabel 
+            value='reminders'
+            control={<Radio />} 
+            label='Reminders' 
+            color='secondary'
+          />
+          <FormControlLabel 
+            value='work'
+            control={<Radio />} 
+            label='Work' 
+            color='secondary'
+          />
+          {/* <Radio 
+            value='hello' 
+            color='secondary'
+          />
+          <Radio 
+            value='goodbye' 
+            color='secondary'
+          /> */}
+        </RadioGroup>
+      </FormControl>
 
       <Button
         // className={classes.btn}
