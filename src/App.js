@@ -3,6 +3,7 @@ import Notes from './pages/Notes'
 import Create from './pages/Create'
 import { createTheme, ThemeProvider } from '@mui/material';
 import { purple } from '@mui/material/colors';
+import Layout from './components/Layout';
 
 // To create a custom theme, we will import the createTheme and ThemeProvider. ThemeProvider is a wrapper that takes an object (createTheme below) to style whatever is in that wrapper.
 const theme = createTheme({
@@ -19,14 +20,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Notes />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <Notes />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Switch>
+        </Layout>
       </Router>
     </ThemeProvider>
   );
