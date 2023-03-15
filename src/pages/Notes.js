@@ -23,7 +23,7 @@ export default function Notes() {
 
   return (
     <Container>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} mt>
         {notes.map(note => (
           <Grid 
             item 
