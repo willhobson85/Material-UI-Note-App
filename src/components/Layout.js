@@ -1,11 +1,13 @@
 import React from "react";
+import { Drawer, Typography, Box } from "@mui/material";
+
+const drawerWidth = 240;
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <Box sx={{ display: 'flex' }}>
       {/* app bar */}
 
-      {/* side drawer */}
       <div 
         sx={{
           background: '#f9f9f9',
@@ -14,6 +16,26 @@ export default function Layout({ children }) {
       >
         {children}
       </div>
-    </div>
+      
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="permanent"
+        anchor="right"
+      >
+        <div>
+          <Typography variant="h5">
+            Notes
+          </Typography>
+        </div>
+      </Drawer>
+
+    </Box>
   )
 }
