@@ -15,6 +15,7 @@ export default function NoteCard({ note, handleDelete }) {
           title={note.title}
           subheader={note.category}
         />
+        
         <CardContent>
           <Typography 
             variant="body2"
