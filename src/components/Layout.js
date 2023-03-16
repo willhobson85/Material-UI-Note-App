@@ -1,8 +1,9 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { AppBar, Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import { format } from 'date-fns'
 
 const drawerWidth = 240;
 
@@ -24,8 +25,30 @@ export default function Layout({ children }) {
   ]
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      {/* app bar */}
+    <Box sx={{ 
+      display: 'flex',
+      marginTop: 7
+    }}>
+      <AppBar
+        elevation={0}
+      >
+        <Toolbar
+          sx={{
+            width: `calc(97% - (${drawerWidth}px))`
+          }}
+        >
+          <Typography
+            sx={{
+              flexGrow: 1
+            }}
+          >
+            Today is {format(new Date(), 'do MMMM Y') }
+          </Typography>
+          <Typography>
+            Mario
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
       <div 
         sx={{
@@ -35,7 +58,6 @@ export default function Layout({ children }) {
       >
         {children}
       </div>
-      
       <Drawer
         sx={{
           width: drawerWidth,
