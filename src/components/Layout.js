@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { AppBar, Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import { format } from 'date-fns'
@@ -31,6 +31,10 @@ export default function Layout({ children }) {
     }}>
       <AppBar
         elevation={0}
+        sx={{
+          position: 'fixed',
+          marginLeft: drawerWidth
+        }}
       >
         <Toolbar
           sx={{
@@ -47,6 +51,10 @@ export default function Layout({ children }) {
           <Typography>
             Mario
           </Typography>
+          <Avatar 
+            src='/mario-av.png' 
+            sx={{ marginLeft: 1}}   
+          />
         </Toolbar>
       </AppBar>
 
