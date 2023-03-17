@@ -4,7 +4,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.my-masonry-grid {
+.masonry-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,11 +12,11 @@ body {
   margin-top: 20px;
   width: auto;
 }
-.my-masonry-grid_column {
+.masonry-grid_column {
   padding-left: 30px;
   background-clip: padding-box;
 }
 
-.my-masonry-grid_column > div {
+.masonry-grid_column > div {
   margin-bottom: 30px;
 }
