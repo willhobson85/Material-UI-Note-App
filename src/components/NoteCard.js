@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import React from "react";
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import { Card, CardHeader, CardContent, IconButton, Typography, Avatar } from "@mui/material";
@@ -6,9 +7,9 @@ import { yellow, green, pink, blue } from '@mui/material/colors';
 const classes = (note)  => {
   return {
      test: {
-        height: 350,
-        border: (note.category === 'work') ? '1px solid red' :  null
-     }
+        border: (note.category === 'important') ? '1px solid red' :  null
+     },
+     marginTop: 4
   }
 }
 
@@ -16,13 +17,13 @@ export default function NoteCard({ note, handleDelete }) {
   const styles = classes(note)
   
   const AvatarColor = note => {
-    if (note.category === "work") {
+    if (note.category === "todos") {
       return yellow[700];
     }
     if (note.category === "money") {
       return green[500];
     }
-    if (note.category === "todos") {
+    if (note.category === "important") {
       return pink[500];
     }
     return blue[500];
@@ -30,7 +31,11 @@ export default function NoteCard({ note, handleDelete }) {
 
   return (
     <div>
-      <Card elevation={3} sx={styles.test}>
+      <Card 
+        elevation={3} 
+        
+        sx={styles.test}
+      >
         <CardHeader 
           avatar={
             <Avatar
