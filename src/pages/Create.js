@@ -117,9 +117,9 @@ export default function Create() {
               color='secondary'
             />
             <FormControlLabel 
-              value='work'
+              value='important'
               control={<Radio />} 
-              label='Work' 
+              label='Important' 
               color='secondary'
             />
           </RadioGroup>
