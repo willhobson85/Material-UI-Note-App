@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Container } from '@mui/system'
 import NoteCard from '../components/NoteCard'
@@ -32,8 +31,8 @@ export default function Notes() {
     <Container>
       <Masonry
         breakpointCols={breakpoints}
-        className='my-masonry-grid'
-        columnClassName='my-masonry-grid_column'
+        className='masonry-grid'
+        columnClassName='masonry-grid_column'
       >
         {notes.map(note => (
           <div key={note.id} >
