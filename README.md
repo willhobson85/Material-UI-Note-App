@@ -100,9 +100,8 @@ I initially didn't like Material-UI. I have always built my components myself, a
 
 ![Contributors][contributors-shield]
 
-MEMBER NAME - [LinkedIn](https://www.linkedin.com/in/the-william-hobson/) [GitHub](https://github.com/willhobson85/)
+Will Hobson - [LinkedIn](https://www.linkedin.com/in/the-william-hobson/) [GitHub](https://github.com/willhobson85/)
 
-MEMBER NAME - [LinkedIn](LINKEDIN URL HERE) [GitHub](GITHUB URL HERE)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
