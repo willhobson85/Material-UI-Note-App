@@ -98,8 +98,6 @@ I initially didn't like Material-UI. I have always built my components myself, a
 
 ## Contact
 
-![Contributors][contributors-shield]
-
 Will Hobson - [LinkedIn](https://www.linkedin.com/in/the-william-hobson/) [GitHub](https://github.com/willhobson85/)
 
 
